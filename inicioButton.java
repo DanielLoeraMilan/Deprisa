@@ -1,0 +1,19 @@
+import greenfoot.*; 
+
+public class inicioButton extends Actor
+{
+    public void act()
+    {
+        GreenfootImage image = getImage();
+        
+        if(Greenfoot.mouseMoved(this)){
+            image.scale(270,145);
+        }else{
+            image.scale(250,125);
+        }
+        
+        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(new PantallaInfo());
+        }
+    }
+}
