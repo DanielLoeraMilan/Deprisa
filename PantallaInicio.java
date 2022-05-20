@@ -12,7 +12,7 @@ public class PantallaInicio extends World
     
     private void prepare()
     {
-        inicioButton inicioButton = new inicioButton();
-        addObject(inicioButton,307,302);
+        StartButton startButton = new StartButton();
+        addObject(startButton,307,302);
     }
 }

@@ -15,7 +15,7 @@ public class PantallaInfo extends World
     
     private void prepare()
     {
-        vamosBoton boton = new vamosBoton();
-        addObject(boton,300,340);
+        LetsGoButton letsGoButton = new LetsGoButton();
+        addObject(letsGoButton,300,340);
     }
 }

@@ -1,6 +1,6 @@
 import greenfoot.*; 
 
-public class vamosBoton extends Actor
+public class LetsGoButton extends Actor
 {
     public void act()
     {
