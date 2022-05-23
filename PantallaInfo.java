@@ -10,6 +10,8 @@ public class PantallaInfo extends World
     public PantallaInfo()
     {    
         super(600, 400, 1); 
+        setBackground("images/pixil-frame-0 (2).png");
+        
         prepare();
     }
     
