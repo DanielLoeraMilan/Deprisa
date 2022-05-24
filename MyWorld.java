@@ -35,5 +35,18 @@ public class MyWorld extends World
         addObject(coin2,76,346);
         Tuba tuba = new Tuba();
         addObject(tuba,505,328);
+        BlueCar blueCar = new BlueCar();
+        addObject(blueCar,83,24);
+        GreyCar greyCar = new GreyCar();
+        addObject(greyCar,192,22);
+        YellowCar yellowCar = new YellowCar();
+        addObject(yellowCar,470,23);
+        yellowCar.setLocation(152,372);
+        RedCar redCar = new RedCar();
+        addObject(redCar,435,376);
+        coin.setLocation(494,117);
+        yellowCar.setLocation(472,18);
+        redCar.setLocation(288,377);
+        yellowCar.setLocation(350,205);
     }
 }
