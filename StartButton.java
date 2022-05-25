@@ -13,6 +13,7 @@ public class StartButton extends Actor
         }
         
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("tubaFX.wav");
             Greenfoot.setWorld(new PantallaInfo());
         }
     }

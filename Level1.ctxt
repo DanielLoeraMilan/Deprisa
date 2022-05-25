@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Level1
+comment1.params=
+comment1.target=Level1()
+comment2.params=pavementWidth\ pavementHeight\ pavementMarker\ grassMarker\ mapArray
+comment2.target=void\ drawPavementMap(int,\ int,\ java.lang.String,\ java.lang.String,\ java.lang.String[][])
+comment3.params=mapWidth\ mapHeight\ fileName
+comment3.target=java.lang.String[][]\ readMap(int,\ int,\ java.lang.String)
+numComments=4

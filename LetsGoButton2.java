@@ -1,6 +1,7 @@
 import greenfoot.*; 
+import java.io.IOException;
 
-public class LetsGoButton extends Actor
+public class LetsGoButton2 extends Actor
 {
     public void act()
     {
@@ -13,8 +14,13 @@ public class LetsGoButton extends Actor
         }
         
         if(Greenfoot.mouseClicked(this)){
-            Greenfoot.playSound("tubaFX.wav");
-            Greenfoot.setWorld(new ControlsScreen());
+            try{
+                Greenfoot.playSound("tubaFX.wav");
+                Greenfoot.setWorld(new Level1());
+            }catch(IOException e){
+                return;
+            }
+            
         }
     }
 }
