@@ -12,8 +12,6 @@ public class VagonetaHud extends Actor
     }
     
     public void refresh(){
-        getWorld().showText("Nivel: "+level,100,30);
-        getWorld().showText("Vidas: "+lifes,250,30);
         getWorld().showText("Score: "+score,400,30);
     }
     

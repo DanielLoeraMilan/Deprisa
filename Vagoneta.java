@@ -3,10 +3,7 @@ import greenfoot.*;
 
 public class Vagoneta extends Actor
 {
-    private static final int UP=0;
-    private static final int DOWN=1;
-    private static final int LEFT=2;
-    private static final int RIGHT=3;
+    
     
     public boolean carCollisionFlag = false;
     
@@ -69,12 +66,6 @@ public class Vagoneta extends Actor
             getWorld().removeObject(item);
             score += item.getScore();
             vagonetaHud.setScore(score);
-            
-            if(getWorld().getObjects(Item.class).isEmpty()){
-                offsetX=0;
-                offsetY=0;
-                getWorld().showText("GAME OVER",350,250);
-            }
         }
     }
     
@@ -94,9 +85,12 @@ public class Vagoneta extends Actor
     }
     
     private void checkParkingSpace(int currentX, int currentY){
+        Timer timer = new Timer();
+        
         if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
+            timer.setTime();
             setLocation(currentX, currentY);
-            getWorld().showText("GAME OVER",350,250);
+            getWorld().showText("GAME OVER",300,200);
         }
     }
 }

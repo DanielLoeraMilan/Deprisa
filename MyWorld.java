@@ -3,12 +3,15 @@ import greenfoot.*;
 public class MyWorld extends World
 {
     VagonetaHud hud = new VagonetaHud();
+    Timer timer = new Timer();
+    
     
     public MyWorld()
     {    
         super(600, 400, 1); 
         prepare();
         addObject(hud,0,0);
+        addObject(timer, 0, 0);
     }
     
     private void prepare()
