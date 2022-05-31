@@ -1,6 +1,6 @@
 GGGGXXXXXXXG
 GGGGX     XG
-GGGGXBR  BXG
+GGGGXBU  BXG
 XXXXX     XX
             
  V                      

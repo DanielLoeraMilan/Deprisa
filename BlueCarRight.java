@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class YellowCar here.
+ * Write a description of class BlueCarRight here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class YellowCar extends ParkedCar
+public class BlueCarRight extends ParkedCar
 {
     /**
-     * Act - do whatever the YellowCar wants to do. This method is called whenever
+     * Act - do whatever the BlueCarRight wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("images/BlueCarRight.png");
     }
     
     public int getScore(){

@@ -8,7 +8,7 @@ public class LetsGoButton2 extends Actor
         GreenfootImage image = getImage();
         
         if(Greenfoot.mouseMoved(this)){
-            image.scale(160,90);
+            image.scale(145,75);
         }else{
             image.scale(140,70);
         }

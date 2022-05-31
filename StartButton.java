@@ -7,7 +7,7 @@ public class StartButton extends Actor
         GreenfootImage image = getImage();
         
         if(Greenfoot.mouseMoved(this)){
-            image.scale(270,145);
+            image.scale(255,130);
         }else{
             image.scale(250,125);
         }

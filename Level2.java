@@ -18,12 +18,27 @@ public class Level2 extends World
     
     Grass grassTemplate = new Grass();
     GreenfootImage grassImage = grassTemplate.getImage();
-    RedCar redCarTemplate = new RedCar();
-    GreenfootImage redCarImage = redCarTemplate.getImage();
-    BlueCar blueCarTemplate = new BlueCar();
-    GreenfootImage blueCarImage = blueCarTemplate.getImage();
-    YellowCar yellowCarTemplate = new YellowCar();
-    GreenfootImage yellowCarImage = yellowCarTemplate.getImage();
+    
+    RedCarUp redCarUpTemplate = new RedCarUp();
+    GreenfootImage redCarUpImage = redCarUpTemplate.getImage();
+    RedCarLeft redCarLeftTemplate = new RedCarLeft();
+    GreenfootImage redCarLeftImage = redCarLeftTemplate.getImage();
+    
+    BlueCarDown blueCarDownTemplate = new BlueCarDown();
+    GreenfootImage blueCarDownImage = blueCarDownTemplate.getImage();
+    BlueCarRight blueCarRightTemplate = new BlueCarRight();
+    GreenfootImage blueCarRightImage = blueCarRightTemplate.getImage();
+    
+    YellowCarRight yellowCarRightTemplate = new YellowCarRight();
+    GreenfootImage yellowCarRightImage = yellowCarRightTemplate.getImage();
+    YellowCarUp yellowCarUpTemplate = new YellowCarUp();
+    GreenfootImage yellowCarUpImage = yellowCarUpTemplate.getImage();
+    
+    GreyCarRight greyCarRightTemplate = new GreyCarRight();
+    GreenfootImage GreyCarRightImage = greyCarRightTemplate.getImage();
+    GreyCarLeft greyCarLeftTemplate = new GreyCarLeft();
+    GreenfootImage greyCarLeftImage = greyCarLeftTemplate.getImage();
+    
     Coin coinTemplate = new Coin();
     GreenfootImage coinImage = coinTemplate.getImage();
     Tuba tubaTemplate = new Tuba();
@@ -35,9 +50,14 @@ public class Level2 extends World
     private final String FILENAME="SecondLevel.txt";
     private final String PAVEMENTMARKER="X";
     private final String GRASSMARKER="G";
-    private final String REDCARMARKER="R";
-    private final String BLUECARMARKER="B";
-    private final String YELLOWCARMARKER="Y";
+    private final String REDCARLEFTMARKER="R";
+    private final String REDCARUPMARKER="U";
+    private final String BLUECARDOWNMARKER="B";
+    private final String BLUECARRIGHTMARKER="K";
+    private final String YELLOWCARRIGHTMARKER="Y";
+    private final String YELLOWCARUPMARKER="J";
+    private final String GREYCARRIGHTMARKER="Q";
+    private final String GREYCARLEFTMARKER="M";
     private final String COINMARKER="C";
     private final String VAGONETAMARKER="V";
     private final String TUBAMARKER="T";
@@ -50,11 +70,17 @@ public class Level2 extends World
         setBackground("images/BackGroundStreet.png");
         
         mapArray = readMap(MAPWIDTH, MAPHEIGHT, FILENAME);
-        drawPavementMap(PAVEMENTWIDTH, PAVEMENTHEIGHT, PAVEMENTMARKER, GRASSMARKER, REDCARMARKER, BLUECARMARKER, YELLOWCARMARKER, COINMARKER, VAGONETAMARKER, TUBAMARKER, mapArray);
+        drawPavementMap(PAVEMENTWIDTH, PAVEMENTHEIGHT, PAVEMENTMARKER, GRASSMARKER, REDCARLEFTMARKER, REDCARUPMARKER, 
+        BLUECARDOWNMARKER, BLUECARRIGHTMARKER, YELLOWCARRIGHTMARKER, YELLOWCARUPMARKER, GREYCARRIGHTMARKER, GREYCARLEFTMARKER, 
+        COINMARKER, VAGONETAMARKER, TUBAMARKER, mapArray);
+        
         addObject(hud, 0, 0);
     }
     
-     public void drawPavementMap (int pavementWidth, int pavementHeight, String pavementMarker, String grassMarker, String redCarMarker, String blueCarMarker, String yellowCarMarker, String coinMarker, String vagonetaMarker, String tubaMarker, String[][] mapArray)
+     public void drawPavementMap (int pavementWidth, int pavementHeight, String pavementMarker, String grassMarker, 
+     String redCarLeftMarker, String redCarUpMarker, String blueCarDownMarker, String blueCarRightMarker, 
+     String yellowCarRightMarker, String yellowCarUpMarker, String greyCarRightMarker, String greyCarLeftMarker, 
+     String coinMarker, String vagonetaMarker, String tubaMarker, String[][] mapArray)
     {
         int x=0;
         int y=0;
@@ -73,21 +99,46 @@ public class Level2 extends World
                     int grassX = x*pavementWidth + pavementWidth/2;
                     int grassY = y*pavementHeight + pavementHeight/2;
                     addObject(new Grass(), grassX, grassY);
-                }else if(mapArray[y][x].equals(redCarMarker))
+                }else if(mapArray[y][x].equals(redCarLeftMarker))
                 {
                     int redCarX = x*pavementWidth + pavementWidth/2;
                     int redCarY = y*pavementHeight + pavementHeight/2;
-                    addObject(new RedCar(), redCarX, redCarY);
-                }else if(mapArray[y][x].equals(blueCarMarker))
+                    addObject(new RedCarLeft(), redCarX, redCarY);
+                }else if(mapArray[y][x].equals(redCarUpMarker))
+                {
+                    int redCarX = x*pavementWidth + pavementWidth/2;
+                    int redCarY = y*pavementHeight + pavementHeight/2;
+                    addObject(new RedCarUp(), redCarX, redCarY);
+                }else if(mapArray[y][x].equals(blueCarDownMarker))
                 {
                     int blueCarX = x*pavementWidth + pavementWidth/2;
                     int blueCarY = y*pavementHeight + pavementHeight/2;
-                    addObject(new BlueCar(), blueCarX, blueCarY);
-                }else if(mapArray[y][x].equals(yellowCarMarker))
+                    addObject(new BlueCarDown(), blueCarX, blueCarY);
+                }else if(mapArray[y][x].equals(blueCarRightMarker))
+                {
+                    int blueCarX = x*pavementWidth + pavementWidth/2;
+                    int blueCarY = y*pavementHeight + pavementHeight/2;
+                    addObject(new BlueCarRight(), blueCarX, blueCarY);
+                }else if(mapArray[y][x].equals(yellowCarRightMarker))
                 {
                     int yellowCarX = x*pavementWidth + pavementWidth/2;
                     int yellowCarY = y*pavementHeight + pavementHeight/2;
-                    addObject(new YellowCar(), yellowCarX, yellowCarY);
+                    addObject(new YellowCarRight(), yellowCarX, yellowCarY);
+                }else if(mapArray[y][x].equals(yellowCarUpMarker))
+                {
+                    int yellowCarX = x*pavementWidth + pavementWidth/2;
+                    int yellowCarY = y*pavementHeight + pavementHeight/2;
+                    addObject(new YellowCarUp(), yellowCarX, yellowCarY);
+                }else if(mapArray[y][x].equals(greyCarLeftMarker))
+                {
+                    int greyCarX = x*pavementWidth + pavementWidth/2;
+                    int greyCarY = y*pavementHeight + pavementHeight/2;
+                    addObject(new GreyCarLeft(), greyCarX, greyCarY);
+                }else if(mapArray[y][x].equals(greyCarRightMarker))
+                {
+                    int greyCarX = x*pavementWidth + pavementWidth/2;
+                    int greyCarY = y*pavementHeight + pavementHeight/2;
+                    addObject(new GreyCarRight(), greyCarX, greyCarY);
                 }else if(mapArray[y][x].equals(coinMarker))
                 {
                     int coinX = x*pavementWidth + pavementWidth/2;

@@ -1,11 +1,11 @@
 import greenfoot.*; 
-
-public class LetsGoButton extends Actor
+public class LeaveButton extends Actor
 {
     public void act()
     {
-        GreenfootImage image = getImage();
+        setImage("images/LeaveButton.png");
         
+        GreenfootImage image = getImage();
         if(Greenfoot.mouseMoved(this)){
             image.scale(145,75);
         }else{
@@ -14,7 +14,7 @@ public class LetsGoButton extends Actor
         
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("tubaFX.wav");
-            Greenfoot.setWorld(new ControlsScreen());
+            Greenfoot.setWorld(new PantallaInicio());
         }
     }
 }

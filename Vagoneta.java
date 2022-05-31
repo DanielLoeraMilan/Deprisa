@@ -63,7 +63,7 @@ public class Vagoneta extends Actor
         }
         
         checkCarCollisions(currentX, currentY);
-        
+        checkParkingSpace(currentX, currentY);
     }
     
     private void checkItemCollisions(){
@@ -94,6 +94,13 @@ public class Vagoneta extends Actor
             setLocation(currentX, currentY);
         }else{
             carCollisionFlag = false;
+        }
+    }
+    
+    private void checkParkingSpace(int currentX, int currentY){
+        if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
+            setLocation(currentX, currentY);
+            getWorld().showText("GAME OVER",350,250);
         }
     }
     

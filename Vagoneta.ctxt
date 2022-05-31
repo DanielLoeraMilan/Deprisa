@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=void\ checkItemCollisions()
 comment5.params=currentX\ currentY
 comment5.target=void\ checkCarCollisions(int,\ int)
-numComments=6
+comment6.params=currentX\ currentY
+comment6.target=void\ checkParkingSpace(int,\ int)
+numComments=7
