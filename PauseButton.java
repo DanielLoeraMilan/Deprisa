@@ -1,22 +1,21 @@
-import greenfoot.*; 
-
-public class StartButton extends Actor
+import greenfoot.*;  
+public class PauseButton extends Actor
 {
     public void act()
     {
-        setImage("images/StartButton.png");
+        setImage("images/PauseButton.png");
         
         GreenfootImage image = getImage();
         
         if(Greenfoot.mouseMoved(this)){
-            image.scale(255,130);
+            image.scale(45,45);
         }else{
-            image.scale(250,125);
+            image.scale(40,40);
         }
         
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("tubaFX.wav");
-            Greenfoot.setWorld(new PantallaInfo());
+            Greenfoot.setWorld(new PauseScreen());
         }
     }
 }

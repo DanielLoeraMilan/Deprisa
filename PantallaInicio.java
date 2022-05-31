@@ -7,7 +7,6 @@ public class PantallaInicio extends World
     {    
         super(600, 400, 1); 
         setBackground("images/desierto.jpg");
-    
         prepare();
     }
     

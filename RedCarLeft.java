@@ -1,11 +1,10 @@
-import greenfoot.*;  
+import greenfoot.*; 
 
 public class RedCarLeft extends ParkedCar
 {
-
     public void act()
     {
-        
+        setImage("images/RedCarLeft.png");
     }
     
     public int getScore(){

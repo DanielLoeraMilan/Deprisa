@@ -1,14 +1,13 @@
 import greenfoot.*; 
+import java.io.IOException;
 
-public class LeaveButton extends Actor
+public class LetsGoButton2 extends Actor
 {
     public void act()
     {
-        setImage("images/LeaveButton.png");
+        setImage("images/LetsGo.png");
         
         GreenfootImage image = getImage();
-        
-        //getWorld().showText("Se terminó el tiempo",300,200);
         
         if(Greenfoot.mouseMoved(this)){
             image.scale(145,75);
@@ -17,8 +16,13 @@ public class LeaveButton extends Actor
         }
         
         if(Greenfoot.mouseClicked(this)){
-            Greenfoot.playSound("tubaFX.wav");
-            Greenfoot.setWorld(new PantallaInicio());
+            try{
+                Greenfoot.playSound("tubaFX.wav");
+                Greenfoot.setWorld(new Level1());
+            }catch(IOException e){
+                return;
+            }
+            
         }
     }
 }

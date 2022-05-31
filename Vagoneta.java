@@ -55,7 +55,6 @@ public class Vagoneta extends Actor
         }
         
         checkCarCollisions(currentX, currentY);
-        
         checkParkingSpace(currentX, currentY);
     }
     
@@ -93,4 +92,5 @@ public class Vagoneta extends Actor
             getWorld().showText("GAME OVER",300,200);
         }
     }
+    
 }
