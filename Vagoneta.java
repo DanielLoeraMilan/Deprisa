@@ -1,11 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Vagoneta here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Vagoneta extends Actor
 {
     private static final int UP=0;
@@ -18,14 +13,9 @@ public class Vagoneta extends Actor
     private int offsetX=0;
     private int offsetY=0;
     private int direction;
-    //private static int colissionTimer=18000;
     private int score;
     private VagonetaHud vagonetaHud;
     
-    /**
-     * Act - do whatever the Vagoneta wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Vagoneta(VagonetaHud vagonetaHud){
         this.vagonetaHud = vagonetaHud;
         setImage("images/Vagoneta.png");
