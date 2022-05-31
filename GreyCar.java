@@ -1,19 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Coin here.
+ * Write a description of class GreyCar here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Coin extends Item
+public class GreyCar extends ParkedCar
 {
-    
-    public Coin(){
-        setImage("images/coin.png");
-    }
     /**
-     * Act - do whatever the Coin wants to do. This method is called whenever
+     * Act - do whatever the GreyCar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -22,6 +18,6 @@ public class Coin extends Item
     }
     
     public int getScore(){
-        return 20;
+        return 10;
     }
 }

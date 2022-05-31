@@ -8,27 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Vagoneta extends Actor
 {
+    private static final int UP=0;
+    private static final int DOWN=1;
+    private static final int LEFT=2;
+    private static final int RIGHT=3;
+    
+    public boolean carCollisionFlag = false;
+    
     private int offsetX=0;
     private int offsetY=0;
+    private int direction;
     private int score;
     private VagonetaHud vagonetaHud;
     
-    /**
-     * Act - do whatever the Vagoneta wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Vagoneta(VagonetaHud vagonetaHud){
         this.vagonetaHud = vagonetaHud;
+        setImage("images/Vagoneta.png");
     }
     
     public void act()
     {
         moveVagoneta();
         
-        checkColissions();
+        checkItemCollisions();
     }
     
     private void moveVagoneta(){
+        int currentX=getX();
+        int currentY=getY();
+        
         if(Greenfoot.isKeyDown("up")){
             move(5);
             
@@ -39,6 +47,7 @@ public class Vagoneta extends Actor
             if(Greenfoot.isKeyDown("right")){
                 turn(2);
             }
+            
         }
         
         if(Greenfoot.isKeyDown("down")){
@@ -52,9 +61,12 @@ public class Vagoneta extends Actor
                 turn(-2);
             }
         }
+        
+        checkCarCollisions(currentX, currentY);
+        
     }
     
-    private void checkColissions(){
+    private void checkItemCollisions(){
         Item item = (Item)getOneIntersectingObject(Item.class);
         
         if(item != null){
@@ -69,4 +81,20 @@ public class Vagoneta extends Actor
             }
         }
     }
+    
+    private void checkCarCollisions(int currentX, int currentY){
+        ParkedCar parkedCar = (ParkedCar)getOneIntersectingObject(ParkedCar.class);
+        
+        if(parkedCar != null){
+            if(carCollisionFlag == false){
+               score -= parkedCar.getScore(); 
+               vagonetaHud.setScore(score);
+               carCollisionFlag = true;
+            }
+            setLocation(currentX, currentY);
+        }else{
+            carCollisionFlag = false;
+        }
+    }
+    
 }

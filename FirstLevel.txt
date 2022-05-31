@@ -1,8 +1,9 @@
 GGGGXXXXXXXG
 GGGGX     XG
+GGGGXBR  BXG
 XXXXX     XX
             
-            
+ V                      
+        Y     
 XXX   XXXXXX
-GGX   XGGGGG
-GGX   XGGGGG
+GGX C XGGGGG
