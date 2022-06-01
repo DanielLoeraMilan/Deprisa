@@ -1,11 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Vagoneta here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Vagoneta extends Actor
 {
     private static final int UP=0;
@@ -18,14 +13,9 @@ public class Vagoneta extends Actor
     private int offsetX=0;
     private int offsetY=0;
     private int direction;
-    //private static int colissionTimer=18000;
     private int score;
     private VagonetaHud vagonetaHud;
     
-    /**
-     * Act - do whatever the Vagoneta wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Vagoneta(VagonetaHud vagonetaHud){
         this.vagonetaHud = vagonetaHud;
         setImage("images/Vagoneta.png");
@@ -69,14 +59,7 @@ public class Vagoneta extends Actor
         
         checkCarCollisions(currentX, currentY);
         
-        //ParkedCar car = getCarOnTheWay();
-        /*ParkedCar parkedCar = (ParkedCar)getOneIntersectingObject(ParkedCar.class);
-
-        if(parkedCar != null){
-            setLocation(currentX, currentY);
-        }*/
-        
-        
+        checkParkingSpace(currentX, currentY);
     }
     
     private void checkItemCollisions(){
@@ -110,18 +93,10 @@ public class Vagoneta extends Actor
         }
     }
     
-    private ParkedCar getCarOnTheWay(){
-        switch(direction){
-            case UP:
-                return (ParkedCar)getOneObjectAtOffset(0,-90,ParkedCar.class);
-            case DOWN:
-                return (ParkedCar)getOneObjectAtOffset(0,90,ParkedCar.class);
-            case RIGHT:
-                return (ParkedCar)getOneObjectAtOffset(90,0,ParkedCar.class);
-            case LEFT:
-                return (ParkedCar)getOneObjectAtOffset(-90,0,ParkedCar.class);
+    private void checkParkingSpace(int currentX, int currentY){
+        if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
+            setLocation(currentX, currentY);
+            getWorld().showText("GAME OVER",350,250);
         }
-
-        return null;
     }
 }

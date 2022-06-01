@@ -1,10 +1,7 @@
 import greenfoot.*;  
 
-public class Tuba extends Item
+public class BlueCarRight extends ParkedCar
 {
-    public Tuba(){
-        setImage("images/Tuba.png");
-    }
     
     public void act()
     {
@@ -12,6 +9,6 @@ public class Tuba extends Item
     }
     
     public int getScore(){
-        return 100;
+        return 10;
     }
 }
