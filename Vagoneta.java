@@ -56,6 +56,7 @@ public class Vagoneta extends Actor
         
         checkCarCollisions(currentX, currentY);
         checkParkingSpace(currentX, currentY);
+        checkPavementCollisions(currentX, currentY);
     }
     
     private void checkItemCollisions(){
@@ -83,13 +84,21 @@ public class Vagoneta extends Actor
         }
     }
     
+    private void checkPavementCollisions(int currentX, int currentY){
+        Pavement pavement = (Pavement)getOneIntersectingObject(Pavement.class);
+        
+        if(pavement != null){
+            setLocation(currentX, currentY);
+        }
+    }
+    
     private void checkParkingSpace(int currentX, int currentY){
         Timer timer = new Timer();
         
         if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
             timer.setTime();
             setLocation(currentX, currentY);
-            getWorld().showText("GAME OVER",300,200);
+            Greenfoot.setWorld(new LevelCompletedScreen(score));
         }
     }
     

@@ -69,18 +69,15 @@ public class Level2 extends World
         super(1000, 600, 1);
         setBackground("images/BackGroundStreet.png");
         
-        mapArray = readMap(MAPWIDTH, MAPHEIGHT, FILENAME);
-        drawPavementMap(PAVEMENTWIDTH, PAVEMENTHEIGHT, PAVEMENTMARKER, GRASSMARKER, REDCARLEFTMARKER, REDCARUPMARKER, 
-        BLUECARDOWNMARKER, BLUECARRIGHTMARKER, YELLOWCARRIGHTMARKER, YELLOWCARUPMARKER, GREYCARRIGHTMARKER, GREYCARLEFTMARKER, 
-        COINMARKER, VAGONETAMARKER, TUBAMARKER, mapArray);
+        mapArray = readMap();
+        drawPavementMap(mapArray);
         
         addObject(hud, 0, 0);
     }
     
-     public void drawPavementMap (int pavementWidth, int pavementHeight, String pavementMarker, String grassMarker, 
-     String redCarLeftMarker, String redCarUpMarker, String blueCarDownMarker, String blueCarRightMarker, 
-     String yellowCarRightMarker, String yellowCarUpMarker, String greyCarRightMarker, String greyCarLeftMarker, 
-     String coinMarker, String vagonetaMarker, String tubaMarker, String[][] mapArray) throws IOException
+
+     public void drawPavementMap (String[][] mapArray)
+
     {
         int x=0;
         int y=0;
@@ -89,82 +86,82 @@ public class Level2 extends World
         {
             for(x=0; x<mapArray[y].length; x++)
             {
-                if(mapArray[y][x].equals(pavementMarker))
+                if(mapArray[y][x].equals(PAVEMENTMARKER))
                 {
-                    int pavementX = x*pavementWidth + pavementWidth/2;
-                    int pavementY = y*pavementHeight + pavementHeight/2;
+                    int pavementX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int pavementY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new Pavement(), pavementX, pavementY);
-                } else if(mapArray[y][x].equals(grassMarker))
+                } else if(mapArray[y][x].equals(GRASSMARKER))
                 {
-                    int grassX = x*pavementWidth + pavementWidth/2;
-                    int grassY = y*pavementHeight + pavementHeight/2;
+                    int grassX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int grassY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new Grass(), grassX, grassY);
-                }else if(mapArray[y][x].equals(redCarLeftMarker))
+                }else if(mapArray[y][x].equals(REDCARLEFTMARKER))
                 {
-                    int redCarX = x*pavementWidth + pavementWidth/2;
-                    int redCarY = y*pavementHeight + pavementHeight/2;
+                    int redCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int redCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new RedCarLeft(), redCarX, redCarY);
-                }else if(mapArray[y][x].equals(redCarUpMarker))
+                }else if(mapArray[y][x].equals(REDCARUPMARKER))
                 {
-                    int redCarX = x*pavementWidth + pavementWidth/2;
-                    int redCarY = y*pavementHeight + pavementHeight/2;
+                    int redCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int redCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new RedCarUp(), redCarX, redCarY);
-                }else if(mapArray[y][x].equals(blueCarDownMarker))
+                }else if(mapArray[y][x].equals(BLUECARDOWNMARKER))
                 {
-                    int blueCarX = x*pavementWidth + pavementWidth/2;
-                    int blueCarY = y*pavementHeight + pavementHeight/2;
+                    int blueCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int blueCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new BlueCarDown(), blueCarX, blueCarY);
-                }else if(mapArray[y][x].equals(blueCarRightMarker))
+                }else if(mapArray[y][x].equals(BLUECARRIGHTMARKER))
                 {
-                    int blueCarX = x*pavementWidth + pavementWidth/2;
-                    int blueCarY = y*pavementHeight + pavementHeight/2;
+                    int blueCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int blueCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new BlueCarRight(), blueCarX, blueCarY);
-                }else if(mapArray[y][x].equals(yellowCarRightMarker))
+                }else if(mapArray[y][x].equals(YELLOWCARRIGHTMARKER))
                 {
-                    int yellowCarX = x*pavementWidth + pavementWidth/2;
-                    int yellowCarY = y*pavementHeight + pavementHeight/2;
+                    int yellowCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int yellowCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new YellowCarRight(), yellowCarX, yellowCarY);
-                }else if(mapArray[y][x].equals(yellowCarUpMarker))
+                }else if(mapArray[y][x].equals(YELLOWCARUPMARKER))
                 {
-                    int yellowCarX = x*pavementWidth + pavementWidth/2;
-                    int yellowCarY = y*pavementHeight + pavementHeight/2;
+                    int yellowCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int yellowCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new YellowCarUp(), yellowCarX, yellowCarY);
-                }else if(mapArray[y][x].equals(greyCarLeftMarker))
+                }else if(mapArray[y][x].equals(GREYCARLEFTMARKER))
                 {
-                    int greyCarX = x*pavementWidth + pavementWidth/2;
-                    int greyCarY = y*pavementHeight + pavementHeight/2;
+                    int greyCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int greyCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new GreyCarLeft(), greyCarX, greyCarY);
-                }else if(mapArray[y][x].equals(greyCarRightMarker))
+                }else if(mapArray[y][x].equals(GREYCARRIGHTMARKER))
                 {
-                    int greyCarX = x*pavementWidth + pavementWidth/2;
-                    int greyCarY = y*pavementHeight + pavementHeight/2;
+                    int greyCarX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int greyCarY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new GreyCarRight(), greyCarX, greyCarY);
-                }else if(mapArray[y][x].equals(coinMarker))
+                }else if(mapArray[y][x].equals(COINMARKER))
                 {
-                    int coinX = x*pavementWidth + pavementWidth/2;
-                    int coinY = y*pavementHeight + pavementHeight/2;
+                    int coinX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int coinY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new Coin(), coinX, coinY);
-                }else if(mapArray[y][x].equals(tubaMarker))
+                }else if(mapArray[y][x].equals(TUBAMARKER))
                 {
-                    int tubaX = x*pavementWidth + pavementWidth/2;
-                    int tubaY = y*pavementHeight + pavementHeight/2;
+                    int tubaX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int tubaY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new Tuba(), tubaX, tubaY);
-                }else if(mapArray[y][x].equals(vagonetaMarker))
+                }else if(mapArray[y][x].equals(VAGONETAMARKER))
                 {
-                    int vagonetaX = x*pavementWidth + pavementWidth/2;
-                    int vagonetaY = y*pavementHeight + pavementHeight/2;
+                    int vagonetaX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
+                    int vagonetaY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(new Vagoneta(hud), vagonetaX, vagonetaY);
                 }
             }
         }
     }
     
-    public String[][] readMap(int mapWidth, int mapHeight, String fileName) throws IOException
+    public String[][] readMap() throws IOException
     {
         BufferedReader br = null;
-        String [][] mArray = new String [mapHeight][mapWidth];
+        String [][] mArray = new String [MAPHEIGHT][MAPWIDTH];
         try{
-            br = new BufferedReader(new FileReader(fileName));
+            br = new BufferedReader(new FileReader(FILENAME));
             String l;
             int mapRow = 0; 
             while((l=br.readLine())!=null)
