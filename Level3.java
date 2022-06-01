@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Level1 extends World
+public class Level3 extends World
 {
     private final int WORLDWIDTH = getWidth();
     private final int WORLDHEIGHT = getHeight();
@@ -47,7 +47,7 @@ public class Level1 extends World
     Vagoneta vagonetaTemplate = new Vagoneta(hud);
     GreenfootImage vagonetaImage = vagonetaTemplate.getImage();
     
-    private final String FILENAME="FirstLevel.txt";
+    private final String FILENAME="ThirdLevel.txt";
     private final String PAVEMENTMARKER="X";
     private final String GRASSMARKER="G";
     private final String REDCARLEFTMARKER="R";
@@ -64,9 +64,9 @@ public class Level1 extends World
     String[][] mapArray = new String[MAPHEIGHT][MAPWIDTH];
     
     
-    public Level1() throws IOException
+    public Level3() throws IOException
     {    
-        super(600, 450, 1);
+        super(600, 650, 1);
         setBackground("images/BackGroundStreet.png");
         
         mapArray = readMap(MAPWIDTH, MAPHEIGHT, FILENAME);
@@ -174,7 +174,7 @@ public class Level1 extends World
             int mapRow = 0; 
             while((l=br.readLine())!=null)
             {
-                mArray[mapRow] = l.split(""); //split into each character
+                mArray[mapRow] = l.split("");
                 mapRow++;
             }
         } finally {
@@ -184,4 +184,3 @@ public class Level1 extends World
         return mArray;
     }
 }
-

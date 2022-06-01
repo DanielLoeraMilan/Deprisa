@@ -1,0 +1,13 @@
+ V      C  
+           
+ Q       R
+XXX    XXXXX
+GGX C  XGGGG
+GGX    XGGGG
+GGX C  XGGGG
+GGX    XGGGG
+XXX C  XXXXX
+       
+T   
+   Q Q Y    
+XXXXXXXXXXXX

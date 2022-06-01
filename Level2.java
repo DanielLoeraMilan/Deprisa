@@ -73,6 +73,12 @@ public class Level2 extends World
         drawPavementMap(mapArray);
         
         addObject(hud, 0, 0);
+        prepare();
+    }
+    
+    public void prepare(){
+        PauseButton pauseButton = new PauseButton();
+        addObject(pauseButton, 30, 30);
     }
     
      public void drawPavementMap (String[][] mapArray)

@@ -14,5 +14,7 @@ public class PantallaInicio extends World
     {
         StartButton startButton = new StartButton();
         addObject(startButton,307,302);
+        RecordsButton recordsButton = new RecordsButton();
+        addObject(recordsButton, 550, 350);
     }
 }
