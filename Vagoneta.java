@@ -3,8 +3,6 @@ import greenfoot.*;
 
 public class Vagoneta extends Actor
 {
-    
-    
     public boolean carCollisionFlag = false;
     
     private int offsetX=0;
@@ -95,8 +93,8 @@ public class Vagoneta extends Actor
     private void checkParkingSpace(int currentX, int currentY){
         Timer timer = new Timer();
         
+        
         if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
-            timer.setTime();
             setLocation(currentX, currentY);
             Greenfoot.setWorld(new LevelCompletedScreen(score));
         }

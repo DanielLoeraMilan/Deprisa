@@ -4,6 +4,7 @@ public class PauseButton extends Actor
     public void act()
     {
         setImage("images/PauseButton.png");
+        boolean pauseFlag = false;
         
         GreenfootImage image = getImage();
         
@@ -13,9 +14,14 @@ public class PauseButton extends Actor
             image.scale(40,40);
         }
         
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this) && pauseFlag==false){
             Greenfoot.playSound("tubaFX.wav");
-            Greenfoot.setWorld(new PauseScreen());
+            Greenfoot.delay(300);
+            pauseFlag=true;
+        }
+        
+        if(Greenfoot.mouseClicked(this) && pauseFlag==true){
+            Greenfoot.start();
         }
     }
 }

@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Level2 extends World
+public class Level3 extends World
 {
     private final int WORLDWIDTH = getWidth();
     private final int WORLDHEIGHT = getHeight();
@@ -49,7 +49,7 @@ public class Level2 extends World
     
     Timer timer = new Timer();
     
-    private final String FILENAME="SecondLevel.txt";
+    private final String FILENAME="ThirdLevel.txt";
     private final String PAVEMENTMARKER="X";
     private final String GRASSMARKER="G";
     private final String REDCARLEFTMARKER="R";
@@ -66,13 +66,13 @@ public class Level2 extends World
     String[][] mapArray = new String[MAPHEIGHT][MAPWIDTH];
     
     
-    public Level2() throws IOException
+    public Level3() throws IOException
     {    
-        super(1000, 600, 1);
+        super(600, 650, 1);
         setBackground("images/BackGroundStreet.png");
         
         ParkingSpaceHorizontal parkingSpaceHorizontal = new ParkingSpaceHorizontal();
-        addObject(parkingSpaceHorizontal,729,359);
+        addObject(parkingSpaceHorizontal,515,555);
         
         mapArray = readMap();
         drawPavementMap(mapArray);
@@ -85,12 +85,9 @@ public class Level2 extends World
     public void prepare(){
         PauseButton pauseButton = new PauseButton();
         addObject(pauseButton, 30, 30);
-        
     }
     
-
      public void drawPavementMap (String[][] mapArray)
-
     {
         int x=0;
         int y=0;
@@ -168,7 +165,6 @@ public class Level2 extends World
             }
         }
     }
-    
     public String[][] readMap() throws IOException
     {
         BufferedReader br = null;
@@ -179,7 +175,7 @@ public class Level2 extends World
             int mapRow = 0; 
             while((l=br.readLine())!=null)
             {
-                mArray[mapRow] = l.split(""); //split into each character
+                mArray[mapRow] = l.split("");
                 mapRow++;
             }
         } finally {
