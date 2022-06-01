@@ -48,7 +48,5 @@ public class MyWorld extends World
         addObject(new Vagoneta(hud),124,192);
         PauseButton pauseButton = new PauseButton();
         addObject(pauseButton, 30, 30);
-        InfoButton infoButton = new InfoButton();
-        addObject(infoButton, 570, 370);
     }
 }

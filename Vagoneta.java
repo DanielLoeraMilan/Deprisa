@@ -73,12 +73,6 @@ public class Vagoneta extends Actor
             getWorld().removeObject(item);
             score += item.getScore();
             vagonetaHud.setScore(score);
-            
-            if(getWorld().getObjects(Item.class).isEmpty()){
-                offsetX=0;
-                offsetY=0;
-                getWorld().showText("GAME OVER",350,250);
-            }
         }
     }
     
