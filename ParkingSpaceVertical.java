@@ -1,6 +1,6 @@
 import greenfoot.*;  
 
-public class ParkingSpaceVertical extends ParkingSpace
+public class ParkingSpaceVertical extends Actor
 {
     public void act()
     {

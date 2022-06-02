@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Level1 extends World
+public class Level1 extends Levels
 {
     private final int WORLDWIDTH = getWidth();
     private final int WORLDHEIGHT = getHeight();
@@ -48,7 +48,6 @@ public class Level1 extends World
     GreenfootImage vagonetaImage = vagonetaTemplate.getImage();
     
     Timer timer = new Timer();
-    ParkingSpace parkingSpace = new ParkingSpace();
     
     private final String FILENAME="FirstLevel.txt";
     private final String PAVEMENTMARKER="X";
@@ -69,13 +68,10 @@ public class Level1 extends World
     
     public Level1() throws IOException
     {    
-        super(600, 450, 1);
         setBackground("images/BackGroundStreet.png");
         
         ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
-        addObject(parkingSpaceVertical,398,130);
-    
-        addObject(parkingSpace,398,130);
+        addObject(parkingSpaceVertical,350, 475);
         
         mapArray = readMap();
         drawPavementMap(mapArray);
@@ -163,11 +159,13 @@ public class Level1 extends World
                 {
                     int vagonetaX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
                     int vagonetaY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
-                    addObject(new Vagoneta(hud), vagonetaX, vagonetaY);
+                    addObject(herederos, vagonetaX, vagonetaY);
+                    herederos.setRotation(90);
                 }
             }
         }
     }
+
     public String[][] readMap() throws IOException
     {
         BufferedReader br = null;

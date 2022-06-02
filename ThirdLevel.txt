@@ -1,13 +1,14 @@
- V      C  
-           
- Q       R
-XXX    XXXXX
-GGX C  XGGGG
-GGX    XGGGG
-GGX C  XGGGG
-GGX    XGGGG
-XXX C  XXXXX
-       
-T   
-   Q Q Y    
-XXXXXXXXXXXX
+ C XGGGGGGGGGG
+   XXXXXXXXXXX
+         Q  T 
+              
+    R K       
+   XXXXXXX   X
+  JXGGGGGX  UX
+   XXXXXXX   X
+  UX     X   X
+   XBBPPUX   X
+  BX     XJ  X
+   X         X
+   X      C  X
+ V X   M     X

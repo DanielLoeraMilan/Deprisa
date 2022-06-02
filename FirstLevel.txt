@@ -1,9 +1,14 @@
-GGGGXXXXXXXG
-GGGGX     XG
-GGGGXBU  BXG
-XXXXX     XX
-            
- V                      
-        Y     
-XXX   XXXXXX
-GGX C XGGGGG
+ V XGGGGGGGGGG
+   XGGGXXXXXGG
+   XGGGX   XGG
+   XGGGX C XGG
+   XGGGX   XGG
+   XXXXX   XXX
+              
+              
+   X         X
+   XUJ  UBJB X
+   X         X
+ C XXXXXXXXXXX
+   XGGGGGGGGGG
+   XGGGGGGGGGG

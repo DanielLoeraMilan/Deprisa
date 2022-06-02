@@ -8,8 +8,6 @@ public class LeaveButton extends Actor
         
         GreenfootImage image = getImage();
         
-        //getWorld().showText("Se terminó el tiempo",300,200);
-        
         if(Greenfoot.mouseMoved(this)){
             image.scale(145,75);
         }else{

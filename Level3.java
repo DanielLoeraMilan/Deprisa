@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Level3 extends World
+public class Level3 extends Levels
 {
     private final int WORLDWIDTH = getWidth();
     private final int WORLDHEIGHT = getHeight();
@@ -68,11 +68,10 @@ public class Level3 extends World
     
     public Level3() throws IOException
     {    
-        super(600, 650, 1);
         setBackground("images/BackGroundStreet.png");
         
-        ParkingSpaceHorizontal parkingSpaceHorizontal = new ParkingSpaceHorizontal();
-        addObject(parkingSpaceHorizontal,515,555);
+        ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
+        addObject(parkingSpaceVertical,350, 475);
         
         mapArray = readMap();
         drawPavementMap(mapArray);
@@ -160,11 +159,13 @@ public class Level3 extends World
                 {
                     int vagonetaX = x*PAVEMENTWIDTH + PAVEMENTWIDTH/2;
                     int vagonetaY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
-                    addObject(new Vagoneta(hud), vagonetaX, vagonetaY);
+                    addObject(herederos, vagonetaX, vagonetaY);
+                    herederos.setRotation(-90);
                 }
             }
         }
     }
+
     public String[][] readMap() throws IOException
     {
         BufferedReader br = null;
@@ -175,7 +176,7 @@ public class Level3 extends World
             int mapRow = 0; 
             while((l=br.readLine())!=null)
             {
-                mArray[mapRow] = l.split("");
+                mArray[mapRow] = l.split(""); //split into each character
                 mapRow++;
             }
         } finally {
