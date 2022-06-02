@@ -1,4 +1,5 @@
 import greenfoot.*; 
+
 public class LeaveButton extends Actor
 {
     public void act()
@@ -6,6 +7,9 @@ public class LeaveButton extends Actor
         setImage("images/LeaveButton.png");
         
         GreenfootImage image = getImage();
+        
+        //getWorld().showText("Se terminó el tiempo",300,200);
+        
         if(Greenfoot.mouseMoved(this)){
             image.scale(145,75);
         }else{

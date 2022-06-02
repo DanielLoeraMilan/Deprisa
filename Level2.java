@@ -47,6 +47,8 @@ public class Level2 extends Levels
     Vagoneta vagonetaTemplate = new Vagoneta(hud);
     GreenfootImage vagonetaImage = vagonetaTemplate.getImage();
     
+    Timer timer = new Timer();
+    
     private final String FILENAME="SecondLevel.txt";
     private final String PAVEMENTMARKER="X";
     private final String GRASSMARKER="G";
@@ -68,18 +70,25 @@ public class Level2 extends Levels
     {    
         setBackground("images/BackGroundStreet.png");
         
+        ParkingSpaceHorizontal parkingSpaceHorizontal = new ParkingSpaceHorizontal();
+        addObject(parkingSpaceHorizontal,729,359);
+        
         mapArray = readMap();
         drawPavementMap(mapArray); 
         addObject(hud, 0, 0);
+        addObject(timer, 0, 0);
         prepare();
     }
     
     public void prepare(){
         PauseButton pauseButton = new PauseButton();
         addObject(pauseButton, 30, 30);
+        
     }
     
+
      public void drawPavementMap (String[][] mapArray)
+
     {
         int x=0;
         int y=0;

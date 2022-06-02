@@ -1,18 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Vagoneta here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Vagoneta extends Actor
 {
-    private static final int UP=0;
-    private static final int DOWN=1;
-    private static final int LEFT=2;
-    private static final int RIGHT=3;
-    
     public boolean carCollisionFlag = false;
     
     private int offsetX=0;
@@ -64,6 +54,7 @@ public class Vagoneta extends Actor
         
         checkCarCollisions(currentX, currentY);
         checkParkingSpace(currentX, currentY);
+        checkPavementCollisions(currentX, currentY);
     }
     
     private void checkItemCollisions(){
@@ -91,10 +82,21 @@ public class Vagoneta extends Actor
         }
     }
     
+    private void checkPavementCollisions(int currentX, int currentY){
+        Pavement pavement = (Pavement)getOneIntersectingObject(Pavement.class);
+        
+        if(pavement != null){
+            setLocation(currentX, currentY);
+        }
+    }
+    
     private void checkParkingSpace(int currentX, int currentY){
+        Timer timer = new Timer();
+        
+        
         if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
             setLocation(currentX, currentY);
-            getWorld().showText("GAME OVER",350,250);
+            Greenfoot.setWorld(new LevelCompletedScreen(score));
         }
     }
     

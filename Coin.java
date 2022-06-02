@@ -1,4 +1,5 @@
 import greenfoot.*;  
+
 public class Coin extends Item
 {
     
@@ -8,7 +9,7 @@ public class Coin extends Item
     
     public void act()
     {
-        // Add your action code here.
+       
     }
     
     public int getScore(){

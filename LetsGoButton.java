@@ -4,6 +4,8 @@ public class LetsGoButton extends Actor
 {
     public void act()
     {
+        setImage("images/LetsGo.png");
+        
         GreenfootImage image = getImage();
         
         if(Greenfoot.mouseMoved(this)){

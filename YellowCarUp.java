@@ -1,4 +1,5 @@
 import greenfoot.*;  
+
 public class YellowCarUp extends ParkedCar
 {
     public void act()
