@@ -15,8 +15,6 @@ public class ResumeButton extends Actor
     {
         setImage("images/ResumeButton.png");
         
-        
-        
         GreenfootImage image = getImage();
         
         if(Greenfoot.mouseMoved(this)){
@@ -40,6 +38,10 @@ public class ResumeButton extends Actor
                         break;
                     case 2:
                         level=0;
+                        Level3 level3 = new Level3();
+                        if(level3.rokola.isPlaying() == true){
+                            level3.rokola.stop();
+                        }
                         Greenfoot.setWorld(new LevelThreeCompletedScreen(score));
                         break;
                     default:
