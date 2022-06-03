@@ -70,6 +70,9 @@ public class Level1 extends Levels
     {    
         setBackground("images/BackGroundStreet.png");
         
+        hud.setScore(0);
+        herederos.setScore(0);
+        
         ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
         addObject(parkingSpaceVertical,350, 475);
         
