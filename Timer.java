@@ -28,8 +28,4 @@ public class Timer extends Actor
     private void display(){
         getWorld().showText("" + time, 50, 350);
     }
-    
-    public void setTime(){
-        time = 20;
-    }
 }

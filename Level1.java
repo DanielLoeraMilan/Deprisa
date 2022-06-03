@@ -69,6 +69,10 @@ public class Level1 extends Levels
     public Level1() throws IOException
     {    
         setBackground("images/BackGroundStreet.png");
+        Greenfoot.playSound("DeprisaSoundTrack.wav");
+        
+        hud.setScore(0);
+        herederos.setScore(0);
         
         ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
         addObject(parkingSpaceVertical,350, 475);

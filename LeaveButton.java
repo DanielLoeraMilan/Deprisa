@@ -2,6 +2,7 @@ import greenfoot.*;
 
 public class LeaveButton extends Actor
 {
+    
     public void act()
     {
         setImage("images/LeaveButton.png");
@@ -17,6 +18,7 @@ public class LeaveButton extends Actor
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("tubaFX.wav");
             Greenfoot.setWorld(new PantallaInicio());
+            
         }
     }
 }

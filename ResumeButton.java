@@ -6,8 +6,9 @@ public class ResumeButton extends Actor
     private static int level;
     private int score;
     
-    public ResumeButton(int score){
+    public ResumeButton(int score, int level){
         this.score=score;
+        this.level=level;
     }
     
     public void act()
@@ -30,15 +31,15 @@ public class ResumeButton extends Actor
                 Greenfoot.playSound("tubaFX.wav");
                 switch(level){
                     case 0:
-                        level= level+1;
+                        level=1;
                         Greenfoot.setWorld(new Level2());
                         break;
                     case 1:
-                        level= level+1;
+                        level=2;
                         Greenfoot.setWorld(new Level3());
                         break;
                     case 2:
-                        level= level+1;
+                        level=0;
                         Greenfoot.setWorld(new LevelThreeCompletedScreen(score));
                         break;
                     default:

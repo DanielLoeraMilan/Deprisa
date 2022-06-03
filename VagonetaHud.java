@@ -5,7 +5,7 @@ public class VagonetaHud extends Actor
     private static int score;
     
     public void act()
-    {
+    {  
         refresh();
     }
     

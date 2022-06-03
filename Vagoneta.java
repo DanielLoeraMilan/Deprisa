@@ -9,7 +9,7 @@ public class Vagoneta extends Actor
     private int offsetY=0;
     private int direction;
     private static int score;
-    private int levelCounter=0;
+    private int level;
     private VagonetaHud vagonetaHud;
     
     public Vagoneta(VagonetaHud vagonetaHud){
@@ -18,10 +18,14 @@ public class Vagoneta extends Actor
     }
     
     public void act()
-    {
+    {        
         moveVagoneta();
         
         checkItemCollisions();
+    }
+    
+    public void setScore(int score){
+        this.score = score;
     }
     
     private void moveVagoneta(){
@@ -99,7 +103,14 @@ public class Vagoneta extends Actor
         
         if(currentX >= 345 && currentX <= 355 && currentY >= 470 && currentY <= 480){
             setLocation(currentX, currentY);
-            Greenfoot.setWorld(new LevelOneCompletedScreen(score));
+            if(getWorld() instanceof Level1){
+                level = 0;
+            } else if(getWorld() instanceof Level2){
+                level = 1;
+            }else if(getWorld() instanceof Level3){
+                level = 2;
+            }
+            Greenfoot.setWorld(new LevelOneCompletedScreen(score,level));
         }
     }
     

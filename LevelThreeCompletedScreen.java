@@ -12,5 +12,6 @@ public class LevelThreeCompletedScreen extends World
         showText("Total Score: "+score,300,200);
         
         addObject(new SaveButton(score), 300,300);
+
     }
 }

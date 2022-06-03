@@ -69,6 +69,7 @@ public class Level3 extends Levels
     public Level3() throws IOException
     {    
         setBackground("images/BackGroundStreet.png");
+        Greenfoot.playSound("DeprisaSoundTrack.wav");
         
         ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
         addObject(parkingSpaceVertical,350, 475);

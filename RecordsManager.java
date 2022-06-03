@@ -52,7 +52,7 @@ public class RecordsManager extends World
         records.sort(Comparator.comparing(GameRecord::getScore));
         int j=0;
         if(records.size()<=MAXRECORDS){
-            for(int i=records.size(); i>0; i--){
+            for(int i=records.size()-1; i>=0; i--){
                 auxName=records.get(i).getName();
                 auxScore=records.get(i).getScore();
                 GameRecord recordImage = new GameRecord();
