@@ -2,9 +2,7 @@ import greenfoot.*;
 
 public class VagonetaHud extends Actor
 {
-    private int score;
-    private int level;
-    private int lifes;
+    private static int score;
     
     public void act()
     {

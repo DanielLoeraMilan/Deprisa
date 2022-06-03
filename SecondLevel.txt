@@ -1,14 +1,14 @@
+  T          C
               
-             V
-T M           
-XXXXXXXXX C XX
-GGGXXXGGX   XG
-GGGGGGGGX C XG
-GGGGGGGGX   XG
-XXXXXXXXX C XX
-
-              
-M R K     Y K 
-XXXXXXXXXXXXXX
-GGGGGGGGGGGGGG
-GGGGGGGGGGGGGG
+XXXXXXXXXC   B
+GXXGGX        
+GGGGGXJ     XX
+GGGGGX     Q X
+GGGGGXU      X
+GGGGGX     C X
+GGGGGX       X
+GGGGGXPP   Y X
+GGGGGX      XX
+GGGGGX        
+GGGGGX R      
+XXXXXXXXX    V

@@ -70,8 +70,8 @@ public class Level2 extends Levels
     {    
         setBackground("images/BackGroundStreet.png");
         
-        ParkingSpaceHorizontal parkingSpaceHorizontal = new ParkingSpaceHorizontal();
-        addObject(parkingSpaceHorizontal,729,359);
+        ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
+        addObject(parkingSpaceVertical,350, 475);
         
         mapArray = readMap();
         drawPavementMap(mapArray); 

@@ -70,8 +70,8 @@ public class Level3 extends Levels
     {    
         setBackground("images/BackGroundStreet.png");
         
-        ParkingSpaceHorizontal parkingSpaceHorizontal = new ParkingSpaceHorizontal();
-        addObject(parkingSpaceHorizontal,515,555);
+        ParkingSpaceVertical parkingSpaceVertical = new ParkingSpaceVertical();
+        addObject(parkingSpaceVertical,350, 475);
         
         mapArray = readMap();
         drawPavementMap(mapArray);
@@ -161,7 +161,6 @@ public class Level3 extends Levels
                     int vagonetaY = y*PAVEMENTHEIGHT + PAVEMENTHEIGHT/2;
                     addObject(herederos, vagonetaX, vagonetaY);
                     herederos.setRotation(-90);
-
                 }
             }
         }

@@ -10,9 +10,24 @@ public class RecordsManager extends World
     private String auxName;
     private int auxScore;
     
+    public RecordsManager(){
+        super(600, 400, 1);
+        setBackground("images/RecordsScreen.png");
+        
+        try{
+            records=this.leer();
+        }catch(IOException e){
+            
+        }
+        
+        showRecords();
+        prepare();
+    }
+    
     public RecordsManager(String nameInput, int score)
     {    
         super(600, 400, 1);
+        setBackground("images/RecordsScreen.png");
         
         GameRecord newRecord = new GameRecord(nameInput, score);
         records.add(newRecord);
@@ -29,27 +44,33 @@ public class RecordsManager extends World
             
         }
         
-        records.sort(Comparator.comparingInt(GameRecord::getScore));
-        
+        showRecords();
+        prepare();
+    }
+    
+    private void showRecords(){
+        records.sort(Comparator.comparing(GameRecord::getScore));
+        int j=0;
         if(records.size()<=MAXRECORDS){
-            for(int i=0; i<records.size(); i++){
+            for(int i=records.size(); i>0; i--){
                 auxName=records.get(i).getName();
                 auxScore=records.get(i).getScore();
                 GameRecord recordImage = new GameRecord();
-                recordImage.setImage(new GreenfootImage("Nombre: "+auxName+"   Puntaje: "+auxScore+" puntos",30,Color.BLACK,Color.BLACK));
-                addObject(recordImage, 280, 150+(50*i));
+                recordImage.setImage(new GreenfootImage("Nombre: "+auxName+"   Puntaje: "+auxScore+" puntos",30,Color.WHITE,Color.BLACK));
+                addObject(recordImage, 280, 150+(50*j));
+                j++;
             }
         }else{
             int newSize=records.size()-MAXRECORDS;
-            for(int i=newSize-1; i<records.size()-1; i++){
+            for(int i=records.size()-1; i>newSize-1; i--){
                 auxName=records.get(i).getName();
                 auxScore=records.get(i).getScore();
                 GameRecord recordImage = new GameRecord();
-                recordImage.setImage(new GreenfootImage("Nombre: "+auxName+"   Puntaje: "+auxScore+" puntos",30,Color.BLACK,Color.BLACK));
-                addObject(recordImage, 280, 150+(50*i));
+                recordImage.setImage(new GreenfootImage("Nombre: "+auxName+"   Puntaje: "+auxScore+" puntos",30,Color.WHITE,Color.BLACK));
+                addObject(recordImage, 280, 150+(50*j));
+                j++;
             }
         }
-        prepare();
     }
     
     private void guardar(List<GameRecord> records) throws IOException{
@@ -76,7 +97,7 @@ public class RecordsManager extends World
         
         do{
             line=recordsBufferedReader.readLine();
-            if(line==null){
+            if(line!=null){
                 String[] vectorCadena = line.split(",");
                 records.add(new GameRecord(vectorCadena[0], Integer.parseInt(vectorCadena[1])));
             }

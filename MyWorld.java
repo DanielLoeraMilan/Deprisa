@@ -30,8 +30,6 @@ public class MyWorld extends World
         addObject(redCarLeft,212,44);
         YellowCarRight yellowCarRight = new YellowCarRight();
         addObject(yellowCarRight,342,43);
-        ParkingSpaceHorizontal parkingSpace = new ParkingSpaceHorizontal();
-        addObject(parkingSpace,309,350);
         addObject(new Vagoneta(hud),124,192);
         PauseButton pauseButton = new PauseButton();
         addObject(pauseButton, 30, 30);

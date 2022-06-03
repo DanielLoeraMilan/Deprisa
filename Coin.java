@@ -15,4 +15,8 @@ public class Coin extends Item
     public int getScore(){
         return 20;
     }
+    
+    public void playSound(){
+        Greenfoot.playSound("CoinSound.wav"); 
+    }
 }

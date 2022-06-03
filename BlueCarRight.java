@@ -11,4 +11,8 @@ public class BlueCarRight extends ParkedCar
     public int getScore(){
         return 10;
     }
+    
+    public void playAlarm(){
+        Greenfoot.playSound("alarm1.wav"); 
+    }
 }

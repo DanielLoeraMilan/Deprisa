@@ -8,7 +8,8 @@ public class Vagoneta extends Actor
     private int offsetX=0;
     private int offsetY=0;
     private int direction;
-    private int score;
+    private static int score;
+    private int levelCounter=0;
     private VagonetaHud vagonetaHud;
     
     public Vagoneta(VagonetaHud vagonetaHud){
@@ -61,6 +62,7 @@ public class Vagoneta extends Actor
         Item item = (Item)getOneIntersectingObject(Item.class);
         
         if(item != null){
+            item.playSound();
             getWorld().removeObject(item);
             score += item.getScore();
             vagonetaHud.setScore(score);
@@ -72,7 +74,8 @@ public class Vagoneta extends Actor
         
         if(parkedCar != null){
             if(carCollisionFlag == false){
-               score -= parkedCar.getScore(); 
+               score -= parkedCar.getScore();
+               parkedCar.playAlarm();
                vagonetaHud.setScore(score);
                carCollisionFlag = true;
             }
@@ -94,9 +97,9 @@ public class Vagoneta extends Actor
         Timer timer = new Timer();
         
         
-        if(currentX >= 304 && currentX <= 314 && currentY >= 347 && currentY <= 353){
+        if(currentX >= 345 && currentX <= 355 && currentY >= 470 && currentY <= 480){
             setLocation(currentX, currentY);
-            Greenfoot.setWorld(new LevelCompletedScreen(score));
+            Greenfoot.setWorld(new LevelOneCompletedScreen(score));
         }
     }
     

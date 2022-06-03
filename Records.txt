@@ -1,0 +1,6 @@
+Cristian,50
+Tadeo,120
+Daniel,140
+Luis,80
+Wisin,90
+Esme,10

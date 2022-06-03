@@ -14,4 +14,8 @@ public class Tuba extends Item
     public int getScore(){
         return 100;
     }
+    
+    public void playSound(){
+        Greenfoot.playSound("SoloTuba.wav"); 
+    }
 }

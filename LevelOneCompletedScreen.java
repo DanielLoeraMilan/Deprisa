@@ -1,15 +1,15 @@
 import greenfoot.*;  
 
-public class LevelCompletedScreen extends World
+public class LevelOneCompletedScreen extends World
 {
 
-    public LevelCompletedScreen(int score)
+    public LevelOneCompletedScreen(int score)
     {    
         super(600, 400, 1); 
         
         setBackground("images/LevelCompletedScreen.png");
         
-        ResumeButton resumeButton = new ResumeButton();
+        ResumeButton resumeButton = new ResumeButton(score);
         
         showText("Score: "+score,300,200);
         

@@ -12,5 +12,10 @@ public class RecordsButton extends Actor
         }else{
             image.scale(70,35);
         }
+        
+        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("tubaFX.wav");
+            Greenfoot.setWorld(new RecordsManager());
+        }
     }
 }
