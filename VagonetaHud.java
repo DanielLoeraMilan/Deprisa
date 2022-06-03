@@ -1,16 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class VagonetaHud here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class VagonetaHud extends Actor
 {
-    private int score;
-    private int level;
-    private int lifes;
+    private static int score;
     
     public void act()
     {
@@ -18,8 +10,6 @@ public class VagonetaHud extends Actor
     }
     
     public void refresh(){
-        getWorld().showText("Nivel: "+level,100,30);
-        getWorld().showText("Vidas: "+lifes,250,30);
         getWorld().showText("Score: "+score,400,30);
     }
     
