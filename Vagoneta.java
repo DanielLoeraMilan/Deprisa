@@ -1,41 +1,31 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Vagoneta here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Vagoneta extends Actor
 {
-    private static final int UP=0;
-    private static final int DOWN=1;
-    private static final int LEFT=2;
-    private static final int RIGHT=3;
-    
     public boolean carCollisionFlag = false;
     
     private int offsetX=0;
     private int offsetY=0;
     private int direction;
-    //private static int colissionTimer=18000;
-    private int score;
+    private static int score;
+    private int level;
     private VagonetaHud vagonetaHud;
     
-    /**
-     * Act - do whatever the Vagoneta wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Vagoneta(VagonetaHud vagonetaHud){
         this.vagonetaHud = vagonetaHud;
         setImage("images/Vagoneta.png");
     }
     
     public void act()
-    {
+    {        
         moveVagoneta();
         
         checkItemCollisions();
+    }
+    
+    public void setScore(int score){
+        this.score = score;
     }
     
     private void moveVagoneta(){
@@ -68,30 +58,18 @@ public class Vagoneta extends Actor
         }
         
         checkCarCollisions(currentX, currentY);
-        
-        //ParkedCar car = getCarOnTheWay();
-        /*ParkedCar parkedCar = (ParkedCar)getOneIntersectingObject(ParkedCar.class);
-
-        if(parkedCar != null){
-            setLocation(currentX, currentY);
-        }*/
-        
-        
+        checkParkingSpace(currentX, currentY);
+        checkPavementCollisions(currentX, currentY);
     }
     
     private void checkItemCollisions(){
         Item item = (Item)getOneIntersectingObject(Item.class);
         
         if(item != null){
+            item.playSound();
             getWorld().removeObject(item);
             score += item.getScore();
             vagonetaHud.setScore(score);
-            
-            if(getWorld().getObjects(Item.class).isEmpty()){
-                offsetX=0;
-                offsetY=0;
-                getWorld().showText("GAME OVER",350,250);
-            }
         }
     }
     
@@ -100,7 +78,8 @@ public class Vagoneta extends Actor
         
         if(parkedCar != null){
             if(carCollisionFlag == false){
-               score -= parkedCar.getScore(); 
+               score -= parkedCar.getScore();
+               parkedCar.playAlarm();
                vagonetaHud.setScore(score);
                carCollisionFlag = true;
             }
@@ -110,18 +89,29 @@ public class Vagoneta extends Actor
         }
     }
     
-    private ParkedCar getCarOnTheWay(){
-        switch(direction){
-            case UP:
-                return (ParkedCar)getOneObjectAtOffset(0,-90,ParkedCar.class);
-            case DOWN:
-                return (ParkedCar)getOneObjectAtOffset(0,90,ParkedCar.class);
-            case RIGHT:
-                return (ParkedCar)getOneObjectAtOffset(90,0,ParkedCar.class);
-            case LEFT:
-                return (ParkedCar)getOneObjectAtOffset(-90,0,ParkedCar.class);
+    private void checkPavementCollisions(int currentX, int currentY){
+        Pavement pavement = (Pavement)getOneIntersectingObject(Pavement.class);
+        
+        if(pavement != null){
+            setLocation(currentX, currentY);
         }
-
-        return null;
     }
+    
+    private void checkParkingSpace(int currentX, int currentY){
+        Timer timer = new Timer();
+        
+        
+        if(currentX >= 345 && currentX <= 355 && currentY >= 470 && currentY <= 480){
+            setLocation(currentX, currentY);
+            if(getWorld() instanceof Level1){
+                level = 0;
+            } else if(getWorld() instanceof Level2){
+                level = 1;
+            }else if(getWorld() instanceof Level3){
+                level = 2;
+            }
+            Greenfoot.setWorld(new LevelOneCompletedScreen(score,level));
+        }
+    }
+    
 }
